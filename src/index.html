@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es " class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+    <link rel="icon" type="png" href="/Imagenes/AJC.png">
+    <title>Accion Juvenil</title>
+</head>
+
+<body class=" dark:bg-gray-900 dark:text-white">
+    <nav class="absolute top-0 z-10 w-full bg-black " >
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <img src="/Imagenes/AJC.png" class="h-14 mr-3" alt="AJC Logo" />
+
+            <div class="flex items-center md:order-2 relative">
+                <div class="flex items-center">
+                    <a href="/src/index.html" class="px-2 py-1 text-sm rounded cursor-pointer text-gray-700 bg-gray-100 hover:bg-gray-200">ESPAÑOL</a>
+                
+                    <a href="/src/ingles.html"  class="px-2 py-1 text-sm rounded ml-2 cursor-pointer text-gray-700 bg-gray-100 hover:bg-gray-200">
+                        INGLES
+                    </a>
+                    
+                </div>
+                <button data-collapse-toggle="navbar-language" type="button" id="boton"
+                    class="inline-flex items-center mx-4 p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-language" aria-expanded="false" @click="changeDarkMode">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 bg-gray-100 ml-2">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>a
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 " id="navbar-language">
+                <ul
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700 ">
+                    <li>
+                        <a href="#inicio"
+                            class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-500 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                            aria-current="page">INICIO</a>
+                    </li>
+                    <li>
+                        <a href="#beneficio"
+                            class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-500 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">BENEFICIOS</a>
+                    </li>
+                    <li>
+                        <a href="#carac"
+                            class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-500 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">CARACTERISTICAS</a>
+                    </li>
+                    <li>
+                        <a href="#contac"
+                            class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-500 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">CONTACTANOS</a>
+                    </li>
+                    <li>
+                        <a href="#comen"
+                            class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-500 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">COMENTANOS</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </nav>
+
+    <div><div><div><div id="inicio"></div></div></div></div>
+    
+    <div class="container mx-auto dark:text-white pt-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8" >
+            <div class="imagen relative text-center md:text-left ">
+                <img src="/imagenes/imagen.png" alt="Imagen"
+                    class="mx-auto xl:w-9/12 lg:w-10/12 md:w-full sm:w-full xs:w-8/12 rounded border border-black">
+            </div>
+
+            <div
+                class="titulo text-center md:text-left md:top-0 md:left-0 md:h-full md:flex md:flex-col md:justify-center sm:text-center">
+                <h1 class="text-2xl font-bold mx-2 my-4">Grupo juvenil "Acción Juvenil Católica" de la Parroquia San
+                    Pedro de Virú</h1>
+            </div>
+        </div>
+
+        <h1 class="text-center font-bold py-6 text-3xl " id="beneficio">Beneficios</h1>
+        <section class="md:grid md:grid-cols-3  text-black">
+            <div class="p-7 bg-white rounded m-2 border border-black">
+                <img src="/Imagenes/01.png" alt="">
+                <h1 class="font-bold text-center my-5">Reuniones</h1>
+                <p class="mb-5 text-center px-5">Tener objetivos claros en el grupo, saber hacia dónde caminamos.</p>
+            </div>
+            <div class="p-7 bg-white rounded m-2 border border-black">
+                <img class="w-11/12 mx-auto" src="/Imagenes/02.png" alt="">
+                <h1 class="font-bold text-center my-5">Actividades</h1>
+                <p class="mb-5 text-center px-5">Interacción dependiente en la que unos se apoyan en otros para una
+                    acción común.</p>
+            </div>
+            <div class="p-7 bg-white rounded m-2 border border-black">
+                <img src="/Imagenes/03.png" alt="">
+                <h1 class="font-bold text-center my-5">Participacion Eucaristica</h1>
+                <p class="mb-5 text-center px-5">Desarrollar una permanente formación que respete las dimensiones
+                    personal, grupal, social y religiosa.</p>
+            </div>
+        </section>
+        <h1 class="text-center font-bold text-3xl py-6" id="carac">Caracteristicas</h1>
+        <section class="md:grid md:grid-cols-3 text-black mb-5">
+            <div class="p-7 bg-white rounded m-2 border border-black">
+                <img src="/Imagenes/carac1.png" alt="">
+                <p class="mb-5 text-center px-5 pt-6">El sentido de pertenencia a la iglesia y el compromiso como
+                    miembros de
+                    ella para la evangelización de los otros jóvenes.
+                </p>
+                
+            </div>
+            <div class="p-7 bg-white rounded m-2 border border-black">
+                <img class="w-11/12 mx-auto" src="/Imagenes/carac2.png" alt="">
+                <p class="mb-5 text-center px-5 pt-6">La capacidad del discernimiento para obrar según la voluntad de
+                    Dios en
+                    nuestra vida cotidiana.</p>
+                    
+            </div>
+            
+            <div class="p-7 bg-white rounded m-2 border border-black">
+                <img src="/Imagenes/carac3.png" alt="">
+                <p class="mb-5 text-center px-5 pt-6">Nuestra referencia explícita a Cristo en nuestra vida cotidiana.
+                </p>
+            </div>
+        </section>
+        
+        <div class="bg-gray-100 text-gray-900 round rounded-lg pt-8" id="contac">
+            <div class="max-w-3xl px-6 pt-2 mx-auto text-center">
+
+                <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+                    Únete a nuestra comunidad juvenil católica
+                </h1>
+
+                <p class="mt-4 text-gray-600">
+                    Completa el formulario para que puedas participar en nuestras actividades y eventos.
+                </p>
+
+            </div>
+            <div class="md:grid md:grid-cols-2 gap-4">
+                <div>
+                    <div class="mb-5 px-4">
+                        <label class="block text-gray-800 font-bold mb-2" for="name">
+                            Nombres:
+                        </label>
+
+                        <input class="border border-gray-400 p-3 w-full rounded h-5" type="text" id="name" name="name">
+                    </div>
+                    <div class="mb-5 px-4">
+                        <label class="block text-gray-800 font-bold mb-2" for="apellido">
+                            Apellidos:
+                        </label>
+
+                        <input class="border border-gray-400 p-3 w-full rounded h-5" type="text" id="name" name="name">
+                    </div>
+                    <div class="mb-5 px-4">
+                        <label class="block text-gray-800 font-bold mb-2" for="tell">
+                            Telefono:
+                        </label>
+
+                        <input class="border border-gray-400 p-3 w-full h-5 rounded" type="text" id="name" name="name">
+                    </div>
+
+                    <div class="mb-5 px-4">
+                        <label class="block text-gray-800 font-bold mb-2" for="email">
+                            Email
+                        </label>
+
+                        <input class="border border-gray-400 p-3 w-full rounded h-5" type="email" id="email"
+                            name="email">
+                    </div>
+
+                    <div class="mb-5 px-4">
+                        <div class="mb-2 font-bold text-gray-800">
+                            Áreas de interés
+                        </div>
+
+                        <div class="flex gap-2">
+                            <div class="px-4">
+                                <input class="mr-2" type="checkbox" id="community" name="community">
+                                <label for="community">Comunidad </label>
+                            </div>
+
+                            <div class="px-4">
+                                <input class="mr-2" type="checkbox" id="solidarity" name="solidarity">
+                                <label for="solidarity">Solidaridad</label>
+                            </div>
+
+                            <div class="px-4">
+                                <input class="mr-2" type="checkbox" id="arts" name="arts">
+                                <label for="arts"> Artes </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    </form>
+                </div>
+                <img class="p-7" src="/Imagenes/fotoGrupal.jpg" />
+            </div>
+            <button class="block text-gray-800 font-bold hover:bg-indigo-500 px-5 py-3 w-full " type="submit">
+                ¡Inscríbete!
+            </button>
+
+        </div>
+
+        <div class="bg-gray-100 text-gray-900 round rounded-lg mx-auto px-10 dark:text-gray-900 mt-8" id="comen">
+            <h1 class="text-3xl font-bold text-gray-900 sm:text-4xl text-center py-3">
+                Comenta nuestra comunidad juvenil católica
+            </h1>
+            <div class="bg-white rounded-lg p-6 mt-2">
+                <h2 class="text-2xl font-semibold">Comentanos para mejorar la experiencia</h2>
+
+                <!-- Comentario 1 -->
+                <div class="mt-4 border-t-2 border-gray-200">
+                    <div class="flex items-center mt-4">
+                        <img src="/Imagenes/persona 1.jpg" alt="Usuario 1" class="w-10 h-10 rounded-full">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold">Usuario 1</h3>
+                            <p class="text-gray-600">Hermoso grupo, todos son muy buenas personas y muy unidos. ¡Gracias por dejarme ser parte de ustedes!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comentario 2 -->
+                <div class="mt-4 border-t-2 border-gray-200">
+                    <div class="flex items-center mt-4">
+                        <img src="/Imagenes/persona 2.jpg" alt="Usuario 2" class="w-10 h-10 rounded-full">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold">Usuario 2</h3>
+                            <p class="text-gray-600">¡Tuve una experiencia muya gradable! Definitivamente volveré.!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contenedor de comentarios publicados -->
+                <div class="mt-8" id="comentariosPublicados"></div>
+
+                <!-- Formulario de Comentario -->
+                <div class="mt-4">
+                    <h3 class="text-lg font-semibold">Añadir un comentario</h3>
+                    <form id="commentForm">
+                        <div class="mt-2">
+                            <label for="nombre" class="block text-gray-600">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre"
+                                class="w-full border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="mt-2">
+                            <label for="comentario" class="block text-gray-600">Comentario:</label>
+                            <textarea id="comentario" name="comentario"
+                                class="w-full border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500"
+                                rows="4"></textarea>
+                        </div>
+                        <div class="mt-2">
+                            <label for="imagen" class="block text-gray-600">Imagen:</label>
+                            <input type="file" id="imagen" name="imagen"
+                                class="w-full border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit"
+                                class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Publicar
+                                Comentario</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="fixed bottom-16 right-4 rounded-full">
+            <div class="relative ">
+                <span
+                    class="absolute inset-1 animate-ping inline-flex h-11 w-11 rounded-full bg-sky-500 opacity-70"></span>
+                <span
+                    class="absolute inset-1 animate-ping inline-flex h-11 w-11 rounded-full bg-sky-600 opacity-80"></span>
+            </div>
+            <button id="btnwasa"
+                class="px-1 py-1 rounded-full hover:bg-green-500 focus:ring focus:ring-gray-400 relative">
+                <a href="https://wa.me/959846398" class="btn-whatsapp">
+                    <img class="h-11" src="/btn wasa/btn.png" alt="">
+                </a>
+            </button>
+        </div>
+    </div>
+    <footer class="bg-black dark:bg-black text-gray-300 mt-4">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-2 md:mb-0">
+                    <a href="#" class="flex items-center">
+                        <img src="/Imagenes/AJC.png" class="h-11 mr-3" alt="ACJ" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">GRUPO
+                            JUVENIL</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-2 text-sm font-semibold uppercase dark:text-white">Resources</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-2">
+                                <a href="#" class="hover:underline">Flowbite</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Tailwind CSS</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-2 text-sm font-semibold text-gray-300 uppercase dark:text-white">Redes
+                            Sociales</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-2">
+                                <a href="#" class="hover:underline ">Tik Tok</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="hover:underline ">YouTube</a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="hover:underline">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Facebook</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-2 text-sm font-semibold text-gray-300 uppercase dark:text-white">Legal</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-2">
+                                <a href="#" class="hover:underline">Privacy Policy</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between mr-12">
+                <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#"
+                        class="hover:underline">ACJ</a>. All Rights Reserved.
+                </span>
+                <div class="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
+                    <a href="#" role="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                            style="color: #1877f2" viewBox="0 0 24 24">
+                            <path
+                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                            style="color: #c13584" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                            style="color: #ff0000" viewBox="0 0 24 24">
+                            <path
+                                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-4 w-4"
+                            style="color: #6a76ac">
+                            <path fill="currentColor"
+                                d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/src/accion.js"></script>
+</body>
+
+</html>
